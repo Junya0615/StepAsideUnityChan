@@ -26,7 +26,7 @@ public class ItemGenerator : MonoBehaviour
     {
         //Unityちゃんのオブジェクトを取得
         this.unitychan = GameObject.Find("unitychan");
-        this.unitychanPosiZ = this.unitychan.transform.position.z + 15;
+        this.unitychanPosiZ = startPos;
 
         //コーンをx軸方向に一直線に生成
         for (float j = -1; j <= 1; j += 0.4f)
@@ -42,7 +42,7 @@ public class ItemGenerator : MonoBehaviour
     {
 
         //ユニちゃんが15メートル進むごとにアイテム生成
-        if (this.unitychan.transform.position.z > this.unitychanPosiZ + 15 && this.unitychan.transform.position.z + 50 > startPos + 15 && this.unitychan.transform.position.z + 50 < goalPos) {
+        if (this.unitychan.transform.position.z + 50 > this.unitychanPosiZ + 15 && this.unitychan.transform.position.z + 50 < goalPos) {
 
             this.unitychanPosiZ += 15;
 
